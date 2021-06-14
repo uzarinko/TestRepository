@@ -1,6 +1,5 @@
 <template>
   <div id="login">
-    <v-app>
       <v-card
       class="mx-16"
       elevation="9"
@@ -10,13 +9,24 @@
         <v-container>
           <v-row>
             <v-col cols="6" class="mx-16">
-              <myTextBox label="ユーザID"></myTextBox>
-              <myTextBox label="パスワード"></myTextBox>
+              <v-text-field
+                prepend-icon="mdi-account-circle"
+                label="ユーザID"
+                v-model="userId"
+              />
+              <v-text-field
+                v-bind:type="showPassword ? 'text' : 'password'"
+                @click:append="showPassword = !showPassword"
+                prepend-icon="mdi-lock"
+                v-bind:append-icon="showPassword ? 'mdi-eye' : 'mdi-eye-off'"
+                label="パスワード"
+                v-model="password"
+              />
             </v-col>
           </v-row>
           <v-row>
             <v-col cols="1" class="mr-16" style="margin-left:auto;">
-              <v-btn to="/home" color="blue">ログイン</v-btn>
+              <v-btn color="blue" @click="submit">ログイン</v-btn>
             </v-col>
           </v-row>
         </v-container>
@@ -25,21 +35,25 @@
           <div>&copy; 2019 - {{ new Date().getFullYear() }} コピーライト</div>
         </v-footer>
       </v-card>
-    </v-app>
   </div>
 </template>
 
 <script>
-import myTextBox from '../components/TextBox'
 
 export default {
   name: 'login',
-  components: {
-    myTextBox
+  data () {
+    return {
+      showPassword: false,
+      userId: '',
+      password: ''
+    }
   },
   methods: {
-    clear () {
-      this.msg = ''
+    submit () {
+      if (this.userId === '' && this.password === '') {
+        this.$router.push('home')
+      }
     }
   }
 }

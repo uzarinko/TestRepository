@@ -3,7 +3,9 @@ import Router from 'vue-router'
 
 import Practice from '@/pages/practice'
 import List from '@/pages/list'
-import login from '@/pages/login'
+import Login from '@/pages/login'
+import Home from '@/pages/home'
+import Thread from '@/pages/thread'
 
 Vue.use(Router)
 
@@ -12,7 +14,12 @@ export default new Router({
     {
       path: '/',
       name: 'login',
-      component: login
+      component: Login
+    },
+    {
+      path: '/home',
+      name: 'home',
+      component: Home
     },
     {
       path: '/practice',
@@ -23,6 +30,11 @@ export default new Router({
       path: '/list',
       name: 'List',
       component: List
+    },
+    {
+      path: '/thread',
+      name: 'Thread',
+      component: Thread
     },
     {
       path: '/home',

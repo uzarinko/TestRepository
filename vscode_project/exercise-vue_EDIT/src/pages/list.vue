@@ -7,7 +7,6 @@
       >
         <v-app-bar color="blue">案件一覧
         </v-app-bar>
-
         <v-card-title>
           <v-spacer></v-spacer>
           <v-text-field
@@ -70,6 +69,7 @@ export default {
     // 第一引数にクリックした行のObjectが渡されるので処理を用意しておく
     onClickEvent (data) {
       console.log(data.title)
+      this.$router.push('thread')
     }
   }
 }

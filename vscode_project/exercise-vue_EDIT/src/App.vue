@@ -1,9 +1,10 @@
 <template>
   <div id="app">
+    <v-app>
     <HeaderItem/>
     <router-view/>
-    <img src="./assets/logo.png">
     <br>
+    </v-app>
   </div>
 </template>
 

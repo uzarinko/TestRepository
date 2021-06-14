@@ -1,7 +1,6 @@
 <template>
   <div>
     <br>
-
     <myheader></myheader>
     <v-btn @click="OutputLog()">ログ出力</v-btn>
     <p v-if="msg.length > 0">
