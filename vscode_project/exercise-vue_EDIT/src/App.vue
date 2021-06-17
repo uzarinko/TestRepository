@@ -1,9 +1,10 @@
 <template>
   <div id="app">
     <v-app>
-    <HeaderItem/>
-    <router-view/>
-    <br>
+      <HeaderItem/>
+      <div class="mx-16 mt-16">
+        <router-view/>
+      </div>
     </v-app>
   </div>
 </template>

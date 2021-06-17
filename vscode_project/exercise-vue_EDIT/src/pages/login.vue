@@ -1,9 +1,6 @@
 <template>
   <div id="login">
-      <v-card
-      class="mx-16"
-      elevation="9"
-      >
+      <v-card elevation="9">
       <v-app-bar color="blue">ログイン
       </v-app-bar>
         <v-container>

@@ -13,12 +13,12 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'login',
+      name: 'Login',
       component: Login
     },
     {
       path: '/home',
-      name: 'home',
+      name: 'Home',
       component: Home
     },
     {
@@ -32,7 +32,7 @@ export default new Router({
       component: List
     },
     {
-      path: '/thread',
+      path: '/thread/:item',
       name: 'Thread',
       component: Thread
     },

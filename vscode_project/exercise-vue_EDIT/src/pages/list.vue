@@ -1,51 +1,44 @@
 <template>
-  <div id="login">
-    <v-app>
-      <v-card
-      class="mx-16"
-      elevation="9"
-      >
-        <v-app-bar color="blue">案件一覧
-        </v-app-bar>
-        <v-card-title>
-          <v-spacer></v-spacer>
-          <v-text-field
-            v-model="search"
-            append-icon="mdi-magnify"
-            label="検索"
-            single-line
-            hide-details
-          ></v-text-field>
-        </v-card-title>
+  <div id="list">
+    <v-card elevation="9">
+      <v-app-bar color="blue">案件一覧
+      </v-app-bar>
+      <v-card-title>
+        <v-spacer></v-spacer>
+        <v-text-field
+          v-model="search"
+          append-icon="mdi-magnify"
+          label="検索"
+          single-line
+          hide-details
+        ></v-text-field>
+      </v-card-title>
 
-        <v-container>
-          <v-row>
-            <v-col>
-            <v-data-table
-              :headers="headers"
-              :items="items"
-              :search="search"
-              @click:row="onClickEvent"
-            ></v-data-table>
-            </v-col>
-          </v-row>
-        </v-container>
+      <v-container>
+        <v-row>
+          <v-col>
+          <v-data-table
+            :headers="headers"
+            :items="items"
+            :search="search"
+            @click:row="onClickEvent"
+          ></v-data-table>
+          </v-col>
+        </v-row>
+      </v-container>
 
-        <v-footer>
-          <div class="flex-grow-1"></div>
-          <div>&copy; 2019 - {{ new Date().getFullYear() }} コピーライト</div>
-        </v-footer>
-      </v-card>
-    </v-app>
+      <v-footer>
+        <div class="flex-grow-1"></div>
+        <div>&copy; 2019 - {{ new Date().getFullYear() }} コピーライト</div>
+      </v-footer>
+    </v-card>
   </div>
 </template>
 
 <script>
-import myTextBox from '../components/TextBox'
 
 export default {
   components: {
-    myTextBox
   },
   data () {
     return {
@@ -69,7 +62,7 @@ export default {
     // 第一引数にクリックした行のObjectが渡されるので処理を用意しておく
     onClickEvent (data) {
       console.log(data.title)
-      this.$router.push('thread')
+      this.$router.push({ name: 'Thread', params: {item: data} })
     }
   }
 }

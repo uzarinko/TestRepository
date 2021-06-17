@@ -23,7 +23,6 @@
   <br>
   -----------
   <br>
-  <myTextBox label="test"></myTextBox>
   <br>
     <myDropDownList :options="languages"></myDropDownList>
     <myDropDownList :options="numbars"></myDropDownList>
@@ -52,7 +51,6 @@
 <script>
 import myheader from '../components/myheader'
 import axios from 'axios'
-import myTextBox from '../components/TextBox'
 import myDropDownList from '../components/DropDownList'
 import mySwitch from '../components/Switch'
 import myCalendar from '../components/Calendar'
@@ -61,7 +59,6 @@ import myCheckBox from '../components/CheckBox'
 export default {
   components: {
     myheader,
-    myTextBox,
     myDropDownList,
     mySwitch,
     myCalendar,
