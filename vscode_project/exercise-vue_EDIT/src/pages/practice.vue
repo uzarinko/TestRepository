@@ -26,6 +26,7 @@
   <br>
     <myDropDownList :options="languages"></myDropDownList>
     <myDropDownList :options="numbars"></myDropDownList>
+
     <mySwitch></mySwitch>
     <myCheckBox></myCheckBox>
     <myCalendar></myCalendar>
